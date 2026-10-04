@@ -141,7 +141,7 @@
             <!-- Video Catalog Sections -->
             <div class="max-w-7xl mx-auto px-4 md:px-8 py-8 space-y-10">
                 
-                <!-- Category Filters (Mobile Friendly Scrollable) -->
+                <!-- Category Filters -->
                 <div class="flex items-center gap-2 overflow-x-auto pb-2 hide-scrollbar text-xs md:text-sm">
                     <button onclick="filterCategory('all')" class="cat-pill bg-brand-red text-white px-4 py-1.5 rounded-full whitespace-nowrap">ទាំងអស់</button>
                     <button onclick="filterCategory('វាយប្រហារ')" class="cat-pill bg-brand-card hover:bg-gray-800 text-gray-300 px-4 py-1.5 rounded-full whitespace-nowrap">រឿងវាយប្រហារ (Action)</button>
@@ -159,7 +159,7 @@
                     </div>
 
                     <div id="movieGrid" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3 md:gap-5">
-                        <!-- Dynamic Movie Cards will be inserted here -->
+                        <!-- Dynamic Movie Cards -->
                     </div>
 
                     <!-- Empty Search / Filter State -->
@@ -297,17 +297,14 @@
     <div id="videoModal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-2 sm:p-4 md:p-6 overflow-y-auto">
         <div class="relative w-full max-w-4xl bg-brand-card rounded-2xl overflow-hidden border border-gray-800 shadow-2xl my-auto">
             
-            <!-- Close Modal Button -->
             <button onclick="closeVideoModal()" class="absolute top-3 right-3 z-20 w-9 h-9 bg-black/70 hover:bg-brand-red text-white rounded-full flex items-center justify-center transition">
                 <i class="fa-solid fa-xmark text-lg"></i>
             </button>
 
-            <!-- Video Player Embed Container -->
             <div id="playerContainer" class="relative w-full aspect-video bg-black">
-                <!-- Video/Iframe dynamically injected here -->
+                <!-- Video/Iframe -->
             </div>
 
-            <!-- Video Info & Interactions -->
             <div class="p-4 sm:p-6 space-y-4 max-h-[40vh] overflow-y-auto">
                 <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-gray-800 pb-3">
                     <div>
@@ -322,7 +319,6 @@
                         </div>
                     </div>
 
-                    <!-- Like / Share Actions -->
                     <div class="flex items-center gap-2">
                         <button id="likeBtn" onclick="toggleLike()" class="bg-gray-800 hover:bg-gray-700 text-white text-xs px-3.5 py-2 rounded-full flex items-center gap-1.5 transition">
                             <i id="likeIcon" class="fa-regular fa-thumbs-up"></i>
@@ -334,16 +330,13 @@
                     </div>
                 </div>
 
-                <!-- Description -->
                 <p id="modalDesc" class="text-xs md:text-sm text-gray-300 leading-relaxed"></p>
 
-                <!-- Comments Section -->
                 <div class="pt-2">
                     <h4 class="text-sm font-bold mb-3 text-white flex items-center gap-2">
                         <i class="fa-solid fa-comments text-brand-red"></i> មតិយោបល់ (<span id="commentCount">0</span>)
                     </h4>
                     
-                    <!-- Comment Input -->
                     <div class="flex gap-2 mb-4">
                         <input type="text" id="commentInput" placeholder="បញ្ចេញមតិយោបល់របស់អ្នកនៅទីនេះ..." class="flex-1 bg-black/60 border border-gray-700 rounded-lg text-xs md:text-sm px-3 py-2 text-white focus:outline-none focus:border-brand-red">
                         <button onclick="addComment()" class="bg-brand-red hover:bg-red-700 text-white text-xs md:text-sm px-4 py-2 rounded-lg font-medium transition">
@@ -351,9 +344,8 @@
                         </button>
                     </div>
 
-                    <!-- Comment List -->
                     <div id="commentList" class="space-y-2 max-h-36 overflow-y-auto pr-1">
-                        <!-- Dynamic Comments -->
+                        <!-- Comments -->
                     </div>
                 </div>
             </div>
@@ -372,28 +364,19 @@
                 <div class="w-12 h-12 bg-brand-red/10 text-brand-red rounded-full flex items-center justify-center mx-auto mb-3 text-2xl border border-brand-red/30">
                     <i class="fa-solid fa-lock"></i>
                 </div>
-                <h3 class="text-xl font-bold text-white">ចូលប្រើប្រាស់គណនី</h3>
+                <h3 class="text-xl font-bold text-white">ចូលប្រើប្រាស់គណនីម្ចាស់គេហទំព័រ</h3>
                 <p class="text-xs text-gray-400 mt-1">សម្រាប់តែម្ចាស់ Website ប៉ុណ្ណោះ</p>
-            </div>
-
-            <!-- Admin Credentials Hint Box -->
-            <div class="bg-gray-800/80 border border-gray-700 rounded-lg p-3 mb-5 text-xs text-gray-300">
-                <div class="font-bold text-yellow-400 mb-1 flex items-center gap-1">
-                    <i class="fa-solid fa-key"></i> ព័ត៌មាន Login របស់ម្ចាស់គេហទំព័រ៖
-                </div>
-                <p class="font-mono text-gray-200">Gmail: <span class="text-white bg-black/50 px-1.5 py-0.5 rounded select-all">nndruok@gmail.com</span></p>
-                <p class="font-mono text-gray-200 mt-1">Password: <span class="text-white bg-black/50 px-1.5 py-0.5 rounded select-all">Try.2008.18.Y</span></p>
             </div>
 
             <form onsubmit="handleLogin(event)" class="space-y-4">
                 <div>
                     <label class="block text-xs font-semibold text-gray-300 mb-1">អាសយដ្ឋាន អ៊ីមែល (Gmail)</label>
-                    <input type="email" id="loginEmail" required value="nndruok@gmail.com" class="w-full bg-black/60 border border-gray-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                    <input type="email" id="loginEmail" required placeholder="ឧទាហរណ៍៖ example@gmail.com" class="w-full bg-black/60 border border-gray-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-brand-red">
                 </div>
 
                 <div>
                     <label class="block text-xs font-semibold text-gray-300 mb-1">ពាក្យសម្ងាត់ (Password)</label>
-                    <input type="password" id="loginPassword" required value="Try.2008.18.Y" class="w-full bg-black/60 border border-gray-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-brand-red">
+                    <input type="password" id="loginPassword" required placeholder="••••••••" class="w-full bg-black/60 border border-gray-700 rounded-lg p-3 text-sm text-white focus:outline-none focus:border-brand-red">
                 </div>
 
                 <button type="submit" class="w-full bg-brand-red hover:bg-red-700 text-white font-bold py-3 rounded-lg transition text-sm shadow-lg shadow-brand-red/30">
@@ -416,7 +399,7 @@
         const defaultMovies = [
             {
                 id: '1',
-                title: ' Avatar: The Way of Water',
+                title: 'Avatar: The Way of Water',
                 category: 'វាយប្រហារ',
                 rating: 8.8,
                 year: '2022',
@@ -427,7 +410,7 @@
             },
             {
                 id: '2',
-                title: ' Kung Fu Panda 4',
+                title: 'Kung Fu Panda 4',
                 category: 'រឿងតុក្កតា',
                 rating: 8.2,
                 year: '2024',
@@ -435,41 +418,14 @@
                 poster: 'https://images.unsplash.com/photo-1563089145-599997674d42?q=80&w=600&auto=format&fit=crop',
                 videoUrl: 'https://www.youtube.com/embed/_inKs4eeHiI',
                 description: 'Po ត្រូវតែហ្វឹកហ្វឺនអ្នកស្នងតំណែង Dragon Warrior ថ្មី ខណៈពេលដែលត្រូវប្រឈមមុខនឹងមេធ្មប់ Chameleon ដែលមានសមត្ថភាពក្លែងបន្លំខ្លួន។'
-            },
-            {
-                id: '3',
-                title: ' រឿងកំប្លែង៖ អ្នកបម្រើសែនវង្វេង',
-                category: 'កំប្លែង',
-                rating: 9.0,
-                year: '2023',
-                duration: '1 ម៉ោង 45 នាទី',
-                poster: 'https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=600&auto=format&fit=crop',
-                videoUrl: 'https://www.youtube.com/embed/L3oOldviIgY',
-                description: 'រឿងភាគកំប្លែងសើចសប្បាយរីករាយជាមួយកាយវិការ និងការសម្ដែងដ៏ក្រមិចក្រមើមពីតារាកំប្លែងល្បីៗក្នុងស្រុក។'
-            },
-            {
-                id: '4',
-                title: ' ស្នេហាក្នុងក្ដីស្រមៃ (Melody of Love)',
-                category: 'ស្នេហា',
-                rating: 8.5,
-                year: '2024',
-                duration: 'ភាគ 16 ពេញ',
-                poster: 'https://images.unsplash.com/photo-1518676599625-5829377484d4?q=80&w=600&auto=format&fit=crop',
-                videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-                description: 'រឿងភាគស្នេហាយ៉ាងផ្អែមល្ហែម និងលាយឡំដោយការតស៊ូក្នុងជីវិតរបស់អ្នកសិល្បៈតន្ត្រីវ័យក្មេង។'
-            },
-            {
-                id: '5',
-                title: ' វីដេអូដំណើរកម្សាន្តធម្មជាតិកម្ពុជា',
-                category: 'វីដេអូទូទៅ',
-                rating: 9.5,
-                year: '2024',
-                duration: '25 នាទី',
-                poster: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=600&auto=format&fit=crop',
-                videoUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4',
-                description: 'ទស្សនាទិដ្ឋភាពដ៏ស្រស់ស្អាតនៃព្រៃភ្នំ និងទឹកធ្លាក់ក្នុងប្រទេសកម្ពុជាជាមួយកម្រិតរូបភាពច្បាស់ 4K Ultra HD។'
             }
         ];
+
+        // Default Owner Credentials (If first time setup)
+        const DEFAULT_OWNER = {
+            email: 'nndruok@gmail.com',
+            pass: 'Try.2008.18.Y'
+        };
 
         // State variables
         let movies = [];
@@ -480,6 +436,11 @@
         let likedMovies = new Set();
 
         window.onload = function() {
+            // Setup Owner if not set
+            if (!localStorage.getItem('ks_owner_credentials')) {
+                localStorage.setItem('ks_owner_credentials', JSON.stringify(DEFAULT_OWNER));
+            }
+
             // Load saved movies or load defaults
             const savedMovies = localStorage.getItem('khmer_stream_movies');
             if (savedMovies) {
@@ -512,13 +473,24 @@
             const email = document.getElementById('loginEmail').value.trim();
             const pass = document.getElementById('loginPassword').value.trim();
 
-            // Owner Admin Credentials
-            if (email === 'nndruok@gmail.com' && pass === 'Try.2008.18.Y') {
+            let ownerData = JSON.parse(localStorage.getItem('ks_owner_credentials'));
+
+            // Check if login matches registered owner
+            if (ownerData && email === ownerData.email && pass === ownerData.pass) {
                 isLoggedIn = true;
                 localStorage.setItem('khmer_stream_auth', 'true');
                 updateAuthUI();
                 closeLoginModal();
                 showToast('ចូលប្រើប្រាស់ដោយជោគជ័យ! សូមស្វាគមន៍ម្ចាស់គេហទំព័រ', 'success');
+            } else if (!ownerData) {
+                // First person who logs in becomes the registered owner
+                const newOwner = { email, pass };
+                localStorage.setItem('ks_owner_credentials', JSON.stringify(newOwner));
+                isLoggedIn = true;
+                localStorage.setItem('khmer_stream_auth', 'true');
+                updateAuthUI();
+                closeLoginModal();
+                showToast('ការចុះឈ្មោះជាម្ចាស់គេហទំព័រជោគជ័យ!', 'success');
             } else {
                 showToast('អ៊ីមែល ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវទេ!', 'error');
             }
@@ -584,7 +556,7 @@
         // Render Top Feature/Hero Movie
         function renderHero() {
             if (movies.length === 0) return;
-            const heroMovie = movies[0]; // First movie as hero feature
+            const heroMovie = movies[0];
 
             const heroBanner = document.getElementById('heroBanner');
             const heroTitle = document.getElementById('heroTitle');
@@ -605,7 +577,6 @@
             const emptyState = document.getElementById('emptyState');
             const movieCount = document.getElementById('movieCount');
 
-            // Filter movies based on category and search
             const searchQuery = document.getElementById('searchInput').value.toLowerCase().trim();
             
             const filtered = movies.filter(m => {
@@ -635,7 +606,6 @@
                             <span class="bg-brand-red/90 text-white px-2 py-0.5 rounded font-semibold">${m.category}</span>
                             <span>${m.year}</span>
                         </div>
-                        <!-- Hover Play Overlay -->
                         <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/40">
                             <div class="w-12 h-12 bg-brand-red rounded-full flex items-center justify-center text-white text-xl shadow-xl transform group-hover:scale-110 transition">
                                 <i class="fa-solid fa-play ml-1"></i>
@@ -654,7 +624,6 @@
         function filterCategory(cat) {
             activeCategory = cat;
             
-            // Update active category pill styles
             document.querySelectorAll('.cat-pill').forEach(btn => {
                 if (btn.innerText.includes(cat) || (cat === 'all' && btn.innerText === 'ទាំងអស់')) {
                     btn.className = 'cat-pill bg-brand-red text-white px-4 py-1.5 rounded-full whitespace-nowrap';
@@ -676,12 +645,10 @@
             renderCatalog();
         }
 
-        // Handle Search Input
         function handleSearch() {
             renderCatalog();
         }
 
-        // Open Video Modal
         function openVideoModal(id) {
             const movie = movies.find(m => m.id === id);
             if (!movie) return;
@@ -695,7 +662,6 @@
             document.getElementById('modalRating').innerText = movie.rating;
             document.getElementById('modalDesc').innerText = movie.description;
 
-            // Embed player (Handle YouTube vs Direct MP4/Video)
             const playerContainer = document.getElementById('playerContainer');
             if (movie.videoUrl.includes('youtube.com') || movie.videoUrl.includes('youtu.be')) {
                 playerContainer.innerHTML = `
@@ -710,24 +676,20 @@
                 `;
             }
 
-            // Update like state
             updateLikeUI();
-            // Render Comments
             renderComments();
 
             document.getElementById('videoModal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Prevent background scroll
+            document.body.style.overflow = 'hidden';
         }
 
-        // Close Video Modal
         function closeVideoModal() {
             document.getElementById('videoModal').classList.add('hidden');
-            document.getElementById('playerContainer').innerHTML = ''; // Stop video
+            document.getElementById('playerContainer').innerHTML = '';
             document.body.style.overflow = 'auto';
             activeMovie = null;
         }
 
-        // Like Toggle
         function toggleLike() {
             if (!activeMovie) return;
             if (likedMovies.has(activeMovie.id)) {
@@ -756,7 +718,6 @@
             }
         }
 
-        // Copy Share Link
         function copyCurrentLink() {
             const dummy = document.createElement('input');
             document.body.appendChild(dummy);
@@ -767,7 +728,6 @@
             showToast('បានចម្លងតំណភ្ជាប់វីដេអូរួចរាល់!', 'success');
         }
 
-        // Add Comment
         function addComment() {
             if (!activeMovie) return;
             const input = document.getElementById('commentInput');
@@ -810,7 +770,6 @@
             `).join('');
         }
 
-        // Render Admin Data Table
         function renderAdminTable() {
             const tableBody = document.getElementById('adminMovieTable');
             tableBody.innerHTML = movies.map(m => `
@@ -833,7 +792,6 @@
             `).join('');
         }
 
-        // Form Submit Handler (Add or Edit)
         function handleFormSubmit(e) {
             e.preventDefault();
 
@@ -848,14 +806,12 @@
             const description = document.getElementById('inputDesc').value;
 
             if (id) {
-                // Edit Existing Movie
                 const index = movies.findIndex(m => m.id === id);
                 if (index !== -1) {
                     movies[index] = { id, title, category, rating, year, duration, poster, videoUrl, description };
                     showToast('បានធ្វើបច្ចុប្បន្នភាពវីដេអូដោយជោគជ័យ!', 'success');
                 }
             } else {
-                // Add New Movie
                 const newMovie = {
                     id: Date.now().toString(),
                     title, category, rating, year, duration, poster, videoUrl, description
@@ -871,7 +827,6 @@
             renderHero();
         }
 
-        // Edit Movie
         function editMovie(id) {
             const m = movies.find(item => item.id === id);
             if (!m) return;
@@ -893,7 +848,6 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        // Reset Add/Edit Form
         function resetForm() {
             document.getElementById('movieForm').reset();
             document.getElementById('movieId').value = '';
@@ -902,7 +856,6 @@
             document.getElementById('cancelBtn').classList.add('hidden');
         }
 
-        // Delete Movie
         function deleteMovie(id) {
             if (confirm('តើអ្នកពិតជាចង់លុបវីដេអូនេះចេញពីប្រព័ន្ធមែនទេ?')) {
                 movies = movies.filter(m => m.id !== id);
@@ -914,7 +867,6 @@
             }
         }
 
-        // Reset to Default Demo Data
         function resetToDefaultData() {
             if (confirm('តើអ្នកចង់កំណត់ទិន្នន័យវីដេអូទាំងអស់ទៅជា Demo ដើមវិញមែនទេ?')) {
                 movies = [...defaultMovies];
@@ -926,7 +878,6 @@
             }
         }
 
-        // Open & Close Login Modal
         function openLoginModal() {
             document.getElementById('loginModal').classList.remove('hidden');
         }
@@ -935,7 +886,6 @@
             document.getElementById('loginModal').classList.add('hidden');
         }
 
-        // Show Custom Toast Alert
         function showToast(msg, type = 'info') {
             const toast = document.getElementById('toast');
             const toastMessage = document.getElementById('toastMessage');
